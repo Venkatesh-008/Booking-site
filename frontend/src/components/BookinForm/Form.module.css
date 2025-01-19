@@ -1,0 +1,198 @@
+
+.formContainer {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.85); 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  animation: fadeInForm 1.2s ease-in-out;
+}
+
+
+@keyframes fadeInForm {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes zoomInText {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.formHeading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  animation: zoomInText 1.5s ease-out; 
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeInText 1s ease-in-out;
+}
+
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #555;
+}
+
+.formGroup input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: slideInInput 0.8s ease-in-out;
+}
+
+
+@keyframes slideInInput {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+
+.submitButton {
+  padding: 12px 18px;
+  background-color: #ff5722; 
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: fadeInButton 2s ease-in-out, zoomInOutButton 3s infinite ease-in-out; 
+}
+
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomInOutButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+
+.submitButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+}
+
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 20px 10px;
+  }
+  .form {
+    gap: 15px;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+  
+  .formContainer {
+    padding: 20px;
+    max-width: 90%; 
+    margin: 30px auto; 
+  }
+
+  .formHeading {
+    font-size: 20px; 
+  }
+
+  .formGroup {
+    gap: 10px; 
+  }
+
+  .formGroup input {
+    padding: 10px; 
+    font-size: 14px; 
+  }
+
+  .submitButton {
+    padding: 10px 15px; 
+    font-size: 14px; 
+  }
+}

@@ -1,0 +1,731 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #2c3855;
+  --primary-color-dark: #435681;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: flex;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--extra-light);
+}
+
+.navv {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  animation: slideInFromTop 1s ease-in-out; border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navv__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.navv__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.header__container {
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+.header__image__container {
+  position: relative;
+  min-height: 500px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url("./assests/header.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  animation: zoomIn 2s ease-out;
+}
+
+.header__content {
+  max-width: 600px;
+  padding: 5rem 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.header__content p {
+  color: var(--extra-light);
+}
+
+.booking__container {
+  position: absolute;
+  bottom: -5rem;
+  left: 4%;
+  transform: translateX(-50%);
+  width: calc(100% - 6rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  animation: slideInFromBottom 1.5s ease-out forwards;
+}
+
+.booking__container form {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.booking__container .input__group {
+  width: 100%;
+  position: relative;
+}
+
+.booking__container label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.booking__container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.booking__container .btn {
+  padding: 1rem;
+  margin-left: 33%;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking__container .btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.05);
+}
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.popular__card:hover {
+  transform: scale(1.05);
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.popular__content p {
+  color: var(--text-light);
+}
+
+.client {
+  background-color: var(--extra-light);
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.client__card {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.client__card:hover {
+  transform: translateY(-10px);
+}
+
+.client__card img {
+  max-width: 80px;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+}
+
+.client__card p {
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.reward__container {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.reward__container p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.reward__container h4 {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.reward__btn {
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reward__btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.05);
+}
+
+
+.footer {
+  background-color: var(--extra-light); 
+  padding: 6rem 2rem;
+  animation: fadeIn 2s ease-out forwards;
+  opacity: 0;
+  color: var(--text-light);
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
+}
+
+
+.footer:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: auto;
+  text-align: left;
+  padding: 2rem 0;
+}
+
+.footer__col h3,
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.5px; 
+}
+
+
+.footer__col h3 {
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+  text-transform: uppercase; 
+}
+
+.footer__col h3:hover {
+  color: var(--primary-color);
+  text-decoration: underline; 
+}
+
+
+.footer__col h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.footer__col h4:hover {
+  color: var(--primary-color); 
+  text-decoration: underline;
+}
+
+
+.footer__col p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  line-height: 1.6;
+}
+
+.footer__col p:hover {
+  color: var(--primary-color); 
+  transform: translateX(5px);
+}
+
+
+.footer__bar {
+  position: relative;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+  overflow: hidden;
+  border-top: 2px solid var(--text-light); 
+  background-color: var(--extra-light); 
+  box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.5px; 
+}
+.footer__col li{
+  line-height: 40px;
+}
+
+
+.footer__bar:hover {
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+@media (max-width: 600px) {
+.navv__links{
+  display: none;
+}
+
+
+  .header__container {
+    padding-bottom: 25rem;
+  }
+
+  .booking__container {
+    flex-direction: column;
+    bottom: -10rem;
+    margin-left: 5%;
+    margin-bottom: 75px;
+  }
+
+  .booking__container .btn {
+    grid-template-columns: repeat(1, 1fr);
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+    margin: 0 auto; 
+    max-width: 100%; 
+    padding: 0 1rem; 
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer__container {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr; 
+    padding: 2rem;
+  }
+
+  .footer__col {
+    padding: 1rem;
+  }
+
+  
+.footer__bar{
+  display: none;
+}
+
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.footer__bar:hover {
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+.footer__bar:hover::before {
+  width: 80%; 
+  opacity: 1;
+}
+
+
+  
+  .popular__card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .popular__card:hover {
+    transform: scale(1.05); 
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); 
+  }
+
+  .popular__card img {
+    transition: transform 0.3s ease; 
+  }
+
+  .popular__card:hover img {
+    transform: scale(1.1); 
+  }
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .navv__links {
+    display: none;
+  }
+
+  .header__container {
+    padding-bottom: 25rem;
+  }
+
+  .booking__container {
+    flex-direction: column;
+    bottom: -10rem;
+    margin-left: 5%;
+    margin-bottom: 75px;
+  }
+
+  .booking__container .btn {
+    grid-template-columns: repeat(1, 1fr);
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    justify-items: center; /* Centers the grid items horizontally */
+    gap: 2rem;
+    margin: 0 auto; /* Center the grid itself */
+    max-width: 100%; /* Ensures no overflow */
+    padding: 0 1rem; /* Add some padding to avoid items touching edges */
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer__container {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Ensure it's a single column layout */
+    padding: 2rem;
+  }
+
+  .footer__col {
+    padding: 1rem;
+  }
+
+  /* Footer bar styling */
+  .footer__bar {
+    display: none;
+  }
+
+  /* Animation to reveal the footer bar */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Footer bar hover effect */
+  .footer__bar:hover {
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+  }
+
+  /* Hover effect for the line */
+  .footer__bar:hover::before {
+    width: 80%; /* Line grows on hover for dynamic effect */
+    opacity: 1; /* Full opacity when hovered */
+  }
+
+  /* Hover Effect for Popular Card */
+  .popular__card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .popular__card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+
+  .popular__card img {
+    transition: transform 0.3s ease; /* Smooth transition for image */
+  }
+
+  .popular__card:hover img {
+    transform: scale(1.1); /* Zoom-in effect for image on hover */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
